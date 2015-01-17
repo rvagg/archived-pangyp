@@ -1,8 +1,11 @@
-node-gyp
+pangyp
 =========
-### Node.js native addon build tool
 
-`node-gyp` is a cross-platform command-line tool written in Node.js for compiling
+### Node.js and io.js native addon build tool
+
+***A (hopefully temporary) fork of [TooTallNate/node-gyp](https://github.com/TooTallNate/node-gyp) adding io.js support***
+
+`pangyp` is a cross-platform command-line tool written in Node.js for compiling
 native addon modules for Node.js.  It bundles the [gyp](https://code.google.com/p/gyp/)
 project used by the Chromium team and takes away the pain of dealing with the
 various differences in build platforms. It is the replacement to the `node-waf`
@@ -12,7 +15,7 @@ to support the latest versions of node.
 
 Multiple target versions of node are supported (i.e. `0.8`, `0.9`, `0.10`, ..., `1.0`,
 etc.), regardless of what version of node is actually installed on your system
-(`node-gyp` downloads the necessary development files for the target version).
+(`pangyp` downloads the necessary development files for the target version).
 
 #### Features:
 
@@ -27,7 +30,7 @@ Installation
 You can install with `npm`:
 
 ``` bash
-$ npm install -g node-gyp
+$ npm install -g pangyp
 ```
 
 You will also need to install:
@@ -47,13 +50,13 @@ You will also need to install:
       * Microsoft Visual Studio C++ 2012/13 for Windows Desktop ([Express][msvc2012] version works well)
 
 If you have multiple Python versions installed, you can identify which Python
-version `node-gyp` uses by setting the '--python' variable:
+version `pangyp` uses by setting the '--python' variable:
 
 ``` bash
-$ node-gyp --python /path/to/python2.7
+$ pangyp --python /path/to/python2.7
 ```
 
-If `node-gyp` is called by way of `npm` *and* you have multiple versions of
+If `pangyp` is called by way of `npm` *and* you have multiple versions of
 Python installed, then you can set `npm`'s 'python' config key to the appropriate
 value:
 
@@ -78,7 +81,7 @@ The next step is to generate the appropriate project build files for the current
 platform. Use `configure` for that:
 
 ``` bash
-$ node-gyp configure
+$ pangyp configure
 ```
 
 __Note__: The `configure` step looks for the `binding.gyp` file in the current
@@ -88,7 +91,7 @@ Now you will have either a `Makefile` (on Unix platforms) or a `vcxproj` file
 (on Windows) in the `build/` directory. Next invoke the `build` command:
 
 ``` bash
-$ node-gyp build
+$ pangyp build
 ```
 
 Now you have your compiled `.node` bindings file! The compiled bindings end up
@@ -132,7 +135,7 @@ Some additional resources for addons and writing `gyp` files:
 Commands
 --------
 
-`node-gyp` responds to the following commands:
+`pangyp` responds to the following commands:
 
 | **Command**   | **Description**
 |:--------------|:---------------------------------------------------------------
