@@ -10,7 +10,7 @@
     "bindings",
     "gyp"
   ],
-  "version": "2.2.0",
+  "version": "2.2.1",
   "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)",
   "repository": {
     "type": "git",
@@ -37,5 +37,6 @@
   "devDependencies": {
     "buffertools": "~2.1.2",
     "leveldown": "~1.0.1"
-  }
+  },
+  "scripts": {}
 }
